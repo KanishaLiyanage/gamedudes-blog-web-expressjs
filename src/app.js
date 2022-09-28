@@ -16,7 +16,7 @@ app.get('/', async (req, res) => {
 
     let posts = await Post.find();
 
-    res.render('home', {postsList: posts});
+    res.render('home', { postsList: posts });
 
 });
 
@@ -54,14 +54,26 @@ app.post('/compose', async (req, res) => {
 
 });
 
-app.get('/posts/postid=:postID&postTitle=:postTitle', async (req, res) => {
+app.get('/posts/postID=:postID',
 
-    let id = req.params.postID;
-    let title = req.params.postTitle;
+    async (req, res) => {
 
-    res.render('post', {id: id, title: title});
+        let id = req.params.postID;
 
-});
+        Post.findById(id, async (err, foundPost) => {
+            if (err) {
+                console.log(err);
+            } else {
+                if (foundPost) {
+                    let posts = foundPost;
+                    res.render('blog',
+                        { posts: posts }
+                    );
+                }
+            }
+        });
+
+    });
 
 app.listen(port, function () {
     console.log("Server up on port " + port + ".");

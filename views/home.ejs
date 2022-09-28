@@ -10,148 +10,113 @@
 
     <title>GameDudes Home</title>
 
-    <!-- Bootstrap CSS CDN -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
-    <!-- Custom styles for this template -->
     <link rel="stylesheet" href="css/home.css">
 
 </head>
 
 <body>
 
-    <section class="header-area">
-        <div class="container-header">
-            <div class="header-row">
+    <%- include("header") -%>
 
-                <div class="site-info-row">
-                    <div class="logo-img">
-                        <img src="https://png.pngtree.com/png-clipart/20200727/original/pngtree-gamer-logo-design-concept-vector-png-image_5355225.jpg"
-                            alt="logo" width=60" height="60" />
-                    </div>
-                    <div class="site-name">
-                        <p>GameDudes</p>
-                    </div>
-                </div>
-
-                <div class="menu-container">
-                    <ul class="menu-list">
-                        <li>
-                            <a href="/">home</a>
-                        </li>
-                        <li>
-                            <a href="/signIn">Sign In</a>
-                        </li>
-                        <li>
-                            <a href="/profile">Profile</a>
-                        </li>
-                        <li>
-                            <a href="/about">about</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="baner-area">
-        <div class="baner-container">
-            <div class="background-img">
-                <div class="background-overlay">
-                    <div class="baner-content">
-                        <h1>Dude You’re In The Right Place</h1>
-                        <p>
-                            The most popular blog website for gamers
-                            to post experiences in games and see the latest
-                            news about games.
-                        </p>
-                        <div class="baner-button">
-                            <a href="/compose">Tell Your Experience</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Page Content -->
-    <div class="container">
-
-        <div class="row">
-
-            <!-- Blog Entries Column -->
-            <div class="col-md-8">
-
-                <h1 class="my-4">Welcome!</h1>
-
-                <% postsList.forEach(function(post){ %>
-
-                    <!-- Blog Posts -->
-                    <div class="card mb-4">
-                        <img class="card-img-top" src="<%= post.imageURL %>" alt="Card image">
-                        <div class="card-body">
-                            <h2 class="card-title">
-                                <%= post.title %>
-                            </h2>
-                            <p class="card-text">
-                                <%= post.description.substring(0, 500) + " ..." %>
+        <section class="baner-area">
+            <div class="baner-container">
+                <div class="background-img">
+                    <div class="background-overlay">
+                        <div class="baner-content">
+                            <h1>Dude You’re In The Right Place</h1>
+                            <p>
+                                The most popular blog website for gamers
+                                to post experiences in games and see the latest
+                                news about games.
                             </p>
-                            <a href="/posts/postID=<%= post._id%>&postTitle=<%= post.title %>" class="btn btn-primary">Read More &rarr;</a>
-                        </div>
-                        <div class="cat-row">
-                            <div class="card-footer text-muted">
-                                Posted on <%= post.dateCreated %> by
-                                    <a href="#">Name</a>
+                            <div class="baner-button">
+                                <a href="#browse">See Latest News</a>
+                                <!-- <a href="/compose">Tell Your Experience</a> -->
                             </div>
-                            <div class="cat-title">Category: <%= post.category %></div>
-                        </div>
-
-                    </div>
-
-                    <% }); %>
-
-                        <!-- Pagination -->
-                        <ul class="pagination justify-content-center mb-4">
-                            <li class="page-item">
-                                <a class="page-link" href="#">&larr; Older</a>
-                            </li>
-                            <li class="page-item disabled">
-                                <a class="page-link" href="#">New posts &rarr;</a>
-                            </li>
-                        </ul>
-
-            </div>
-
-            <!-- Sidebar Widgets Column -->
-            <div class="col-md-4">
-                <!-- Search Widget -->
-                <div class="card my-4 ">
-                    <h5 class="card-header">Search</h5>
-                    <div class="card-body">
-                        <div class="input-group">
-                            <input type="text" class="form-control" placeholder="Search for...">
-                            <span class="input-group-btn">
-                                <button class="btn btn-secondary" type="button">Go!</button>
-                            </span>
                         </div>
                     </div>
                 </div>
             </div>
+        </section>
 
-        </div>
-        <!-- /.row -->
+        <!-- Page Content -->
+        <section id="browse">
 
-    </div>
-    <!-- /.container 
+            <div class="container">
 
-  Footer -->
-    <footer class="py-5 bg-dark">
-        <div class="container">
-            <p class="m-0 text-center text-white">Copyright &copy; GameDudes 2022</p>
-        </div>
-        <!-- /.container -->
-    </footer>
+                <div class="row">
+
+                    <!-- Blog Entries Column -->
+                    <div class="col-md-8">
+
+                        <h1 class="my-4">Welcome!</h1>
+
+                        <% postsList.forEach(function(post){ %>
+
+                            <!-- Blog Posts -->
+                            <div class="card mb-4">
+                                <img class="card-img-top" src="<%= post.imageURL %>" alt="Card image">
+                                <div class="card-body">
+                                    <h2 class="card-title">
+                                        <%= post.title %>
+                                    </h2>
+                                    <p class="card-text">
+                                        <%= post.description.substring(0, 500) + " ..." %>
+                                    </p>
+                                    <a href="/posts/postID=<%=post._id%>" class="btn btn-primary">Read More &rarr; </a>
+                                </div>
+                                <div class="cat-row">
+                                    <div class="card-footer text-muted">
+                                        Posted on <%= post.dateCreated %> by
+                                            <a href="#">Name</a>
+                                    </div>
+                                    <div class="cat-title">Category: <%= post.category %>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <% }); %>
+
+                                <!-- Pagination -->
+                                <ul class="pagination justify-content-center mb-4">
+                                    <li class="page-item">
+                                        <a class="page-link" href="#">&larr; Older</a>
+                                    </li>
+                                    <li class="page-item disabled">
+                                        <a class="page-link" href="#">New posts &rarr;</a>
+                                    </li>
+                                </ul>
+
+                    </div>
+
+                    <!-- Sidebar Widgets Column -->
+                    <div class="col-md-4">
+                        <!-- Search Widget -->
+                        <div class="card my-4 ">
+                            <h5 class="card-header">Search</h5>
+                            <div class="card-body">
+                                <div class="input-group">
+                                    <input type="text" class="form-control" placeholder="Search for...">
+                                    <span class="input-group-btn">
+                                        <button class="btn btn-secondary" type="button">Go!</button>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <!-- /.row -->
+
+            </div>
+
+        </section>
+
+        <%- include("footer") -%>
 
 </body>
 
