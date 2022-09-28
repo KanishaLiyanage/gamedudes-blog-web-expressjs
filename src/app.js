@@ -1,8 +1,9 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 
-const Post = require('../src/models/post');
 require('../src/db/connection');
+const userRouter = require('../src/routes/user');
+const postRouter = require('../src/routes/post');
 const date = require('../src/utils/date');
 
 const app = express();
@@ -12,76 +13,8 @@ app.use(express.static('public'));
 
 const port = process.env.PORT || 3000;
 
-app.get('/', async (req, res) => {
-
-    let posts = await Post.find();
-
-    res.render('home', { postsList: posts });
-
-});
-
-app.get('/signUp', async (req, res) => {
-    res.render('signUp');
-});
-
-app.get('/signIn', async (req, res) => {
-    res.render('signIn');
-});
-
-app.post('/login', async (req, res) => {
-    res.redirect('/');
-});
-
-app.post('/register', async (req, res) => {
-    res.redirect('/');
-});
-
-app.get('/profile', async (req, res) => {
-    res.render('profile');
-});
-
-app.get('/compose', async (req, res) => {
-    res.render('compose');
-});
-
-app.post('/compose', async (req, res) => {
-
-    const post = new Post({
-
-        title: req.body.title,
-        imageURL: req.body.url,
-        category: req.body.category,
-        description: req.body.description,
-        dateCreated: date.getDate()
-
-    });
-
-    await post.save();
-
-    res.redirect('/');
-
-});
-
-app.get('/posts/postID=:postID',
-
-    async (req, res) => {
-
-        let id = req.params.postID;
-
-        Post.findById(id, async (err, foundPost) => {
-            if (err) {
-                console.log(err);
-            } else {
-                if (foundPost) {
-                    let posts = foundPost;
-                    res.render('blog',
-                        { posts: posts }
-                    );
-                }
-            }
-        });
-
-    });
+app.use(userRouter);
+app.use(postRouter);
 
 app.get('/about', async (req, res) => {
     res.render('about');
