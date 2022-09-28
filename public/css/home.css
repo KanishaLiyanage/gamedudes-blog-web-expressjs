@@ -1,190 +1,220 @@
 * {
-    box-sizing: border-box;
-  }
-  body {
-    font-family: "Poppins", sans-serif;
-    background-color: #fff;
-    font-size: 14px;
-    font-weight: 300;
-    line-height: 1.625em;
-    position: relative;
-    margin-left: -1px;
-    margin-right: -1px;
-  }
-  /* Meniu start */
-  /* header sekcijos nustatymia */
-  .header-area {
-    position: fixed;
-    left: 0;
-    top: 0;
-    right: 0;
-    z-index: 10;
-    background: white;
-  }
-  /* header container nustatymai */
-  .container-header {
-    padding-left: 15px;
-    padding-right: 15px;
-    width: 100%;
-    margin-right: 20px;
-    margin-left: 20px;
-  }
-  /* meniu eilutės aprašymas */
-  .header-row {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: space-between;
-    padding-top: 15px;
-    padding-right: 80px;
-    padding-left: 80px;
-  }
-  /* logotipas */
-  .logo-img {
-    box-sizing: border-box;
-  }
-  /* matoma navigacija */
-  .menu-list a {
-    text-decoration: none;
-    color: #222;
-    text-transform: uppercase;
-  }
-  .menu-list li {
-    display: inline-block;
-  }
-  .menu-list a {
-    list-style: none;
-    padding-right: 8px;
-    padding-left: 8px;
-    font-size: 12px;
-    font-weight: bold;
-  }
-  /* pseudo komanda - užvedus užsisdeda spalva  */
-  .menu-list a:hover {
-    color: #8490ff;
-  }
-  /* uždeda spalvą visada, kol kas nustatom rankiniu būdu */
-  .blog-active {
-    color: #8490ff;
-  }
+  box-sizing: border-box;
+}
 
-  /* baner start */
-  .baner-area {
-    position: relative;
-    display: block;
-    top: 35px;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    margin-bottom: 50px;
-  }
-  .baner-container {
-    width: 100%;
-  }
-  .background-img {
-    position: relative;
-    box-sizing: border-box;
-    background-image: url(https://preview.colorlib.com/theme/personal/img/blog/xblog-home-banner.jpg.pagespeed.ic.LNeIdTttnV.webp);
-    background-size: cover;
-    min-height: 500px;
-    z-index: 1;
-  }
-  .background-overlay {
-    position: absolute;
-    left: 0;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(0, 0, 0, 0.5);
-    z-index: 2;
-  }
-  .baner-content {
-    color: white;
-    align-items: center;
-    display: flex;
-    flex-direction: column;
-    position: relative;
-    top: 200px;
-  }
-  .baner-button a {
-    box-sizing: border-box;
-    text-decoration: none;
-    background: #8490ff;
-    border-radius: 5px;
-    color: white;
-    padding: 7px;
-    text-transform: uppercase;
-    font-weight: bold;
-  }
-  /* baner end */
-  /* top category start */
-  .top-category-widget-box {
-    max-height: 450px;
-    margin-top: 80px;
-    margin-bottom: 80px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    position: relative;
-  }
-  
-  .widget-card {
-    margin-top: 15px;
-    position: relative;
-    z-index: 1;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 300px;
-    height: 222px;
-  }
-  
-  .card-image {
-    width: 300px;
-    height: 222px;
-    z-index: 1;
-    background-position: center;
-  }
-  
-  .card-image-1 {
-    background-image: url(https://preview.colorlib.com/theme/personal/img/blog/xcat-widget1.jpg.pagespeed.ic.OB0FusT_XG.webp);
-  }
-  
-  .card-image-2 {
-    background-image: url(https://preview.colorlib.com/theme/personal/img/blog/xcat-widget2.jpg.pagespeed.ic.3RCDR_AeaY.webp);
-  }
-  
-  .card-image-3 {
-    background-image: url(https://preview.colorlib.com/theme/personal/img/blog/xcat-widget3.jpg.pagespeed.ic.8AuSYKIrOh.webp);
-  }
-  
-  .widget-card__overlay {
-    background: black;
-    position: absolute;
-    height: 85%;
-    width: 85%;
-    margin: 7%;
-    opacity: 60%;
-    z-index: 2;
-  }
-  .widget-card:hover > .widget-card__overlay {
-    background: #8490ff;
-  }
-  
-  .text-on__widget-card {
-    color: white;
-    position: absolute;
-    text-align: center;
-    z-index: 3;
-    width: 80%;
-  }
-  
-  .text-on__widget-card h3 {
-    text-transform: uppercase;
-  }
-  
-  .text-on__widget-card a {
-    color: white;
-    text-decoration: none;
-  }
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: #fff;
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 1.625em;
+  position: relative;
+  margin-left: -1px;
+  margin-right: -1px;
+}
 
+/* Meniu start */
+/* header sekcijos nustatymia */
+.header-area {
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  z-index: 10;
+  background: white;
+}
+
+/* header container nustatymai */
+.container-header {
+  padding-left: 15px;
+  padding-right: 15px;
+  width: 100%;
+  margin-right: 20px;
+  margin-left: 20px;
+}
+
+/* meniu eilutės aprašymas */
+.header-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 10px;
+  padding-right: 80px;
+  padding-left: 80px;
+}
+
+.site-info-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+/* logotipas */
+.logo-img {
+  box-sizing: border-box;
+  padding-bottom: 10px;
+}
+
+.site-name {
+  text-decoration: none;
+  color: #041348;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+/* matoma navigacija */
+.menu-list a {
+  text-decoration: none;
+  color: #222;
+  text-transform: uppercase;
+}
+
+.menu-list li {
+  display: inline-block;
+}
+
+.menu-list a {
+  list-style: none;
+  padding-right: 8px;
+  padding-left: 8px;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+/* pseudo komanda - užvedus užsisdeda spalva  */
+.menu-list a:hover {
+  color: #8490ff;
+}
+
+/* uždeda spalvą visada, kol kas nustatom rankiniu būdu */
+.blog-active {
+  color: #8490ff;
+}
+
+/* baner start */
+.baner-area {
+  position: relative;
+  display: block;
+  top: 35px;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  margin-bottom: 50px;
+}
+
+.baner-container {
+  width: 100%;
+}
+
+.background-img {
+  position: relative;
+  box-sizing: border-box;
+  background-image: url(https://r4.wallpaperflare.com/wallpaper/975/511/725/cyber-cyberpunk-cyberpunk-2077-car-futuristic-hd-wallpaper-d9d038ad71eadd6b9647d82ff011867d.jpg);
+  background-size: cover;
+  min-height: 500px;
+  z-index: 1;
+}
+
+.background-overlay {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 2;
+}
+
+.baner-content {
+  color: white;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  top: 200px;
+}
+
+.baner-button a {
+  box-sizing: border-box;
+  text-decoration: none;
+  background: #8490ff;
+  border-radius: 5px;
+  color: white;
+  padding: 7px;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+/* baner end */
+/* top category start */
+.top-category-widget-box {
+  max-height: 450px;
+  margin-top: 80px;
+  margin-bottom: 80px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  position: relative;
+}
+
+.widget-card {
+  margin-top: 15px;
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 300px;
+  height: 222px;
+}
+
+.card-image {
+  width: 300px;
+  height: 222px;
+  z-index: 1;
+  background-position: center;
+}
+
+.card-image-1 {
+  background-image: url(https://preview.colorlib.com/theme/personal/img/blog/xcat-widget1.jpg.pagespeed.ic.OB0FusT_XG.webp);
+}
+
+.card-image-2 {
+  background-image: url(https://preview.colorlib.com/theme/personal/img/blog/xcat-widget2.jpg.pagespeed.ic.3RCDR_AeaY.webp);
+}
+
+.card-image-3 {
+  background-image: url(https://preview.colorlib.com/theme/personal/img/blog/xcat-widget3.jpg.pagespeed.ic.8AuSYKIrOh.webp);
+}
+
+.widget-card__overlay {
+  background: black;
+  position: absolute;
+  height: 85%;
+  width: 85%;
+  margin: 7%;
+  opacity: 60%;
+  z-index: 2;
+}
+
+.widget-card:hover>.widget-card__overlay {
+  background: #8490ff;
+}
+
+.text-on__widget-card {
+  color: white;
+  position: absolute;
+  text-align: center;
+  z-index: 3;
+  width: 80%;
+}
+
+.text-on__widget-card h3 {
+  text-transform: uppercase;
+}
+
+.text-on__widget-card a {
+  color: white;
+  text-decoration: none;
+}
