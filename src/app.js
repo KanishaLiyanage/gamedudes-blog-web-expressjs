@@ -29,6 +29,7 @@ app.get('/compose', async (req, res) => {
 });
 
 app.post('/compose', async (req, res) => {
+    
     res.redirect('/');
 });
 
