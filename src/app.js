@@ -28,6 +28,14 @@ app.get('/signIn', async (req, res) => {
     res.render('signIn');
 });
 
+app.post('/login', async (req, res) => {
+    res.redirect('/');
+});
+
+app.post('/register', async (req, res) => {
+    res.redirect('/');
+});
+
 app.get('/profile', async (req, res) => {
     res.render('profile');
 });
@@ -74,6 +82,10 @@ app.get('/posts/postID=:postID',
         });
 
     });
+
+app.get('/about', async (req, res) => {
+    res.render('about');
+});
 
 app.listen(port, function () {
     console.log("Server up on port " + port + ".");

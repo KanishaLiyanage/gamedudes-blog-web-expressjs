@@ -13,6 +13,24 @@ body {
     margin-right: -1px;
 }
 
+.container {  display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    gap: 0px 0px;
+    grid-auto-flow: row;
+    grid-template-areas:
+      "image image info"
+      "image image info"
+      ". . .";
+  }
+  
+  .image { grid-area: image; }
+  
+  .info { grid-area: info; }
+  
+
+
+
 .image {
     width: 180px;
     height: 200px;

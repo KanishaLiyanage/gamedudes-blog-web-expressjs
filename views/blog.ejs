@@ -11,9 +11,6 @@
         <%= posts.title %>
     </title>
 
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-
     <link rel="stylesheet" href="css/blog.css">
     <link rel="stylesheet" href="css/home.css">
 
@@ -23,34 +20,31 @@
 
     <%- include("header") -%>
 
-        <!-- Showcase -->
-        <section id="home" class="section-showcase">
-
-            <div class="grid">
-                <div class="image">
-                    <img src="<%= posts.imageURL %>" alt="" />
+        <div class="container">
+            <div class="image">
+                <p>
+                <h1>
+                    <%= posts.title %>
+                </h1>
+                <h4>
+                    <%= posts.category %>
+                </h4>
+                </p>
+                <img src="<%= posts.imageURL %>" alt="" />
+            </div>
+            <div class="info">
+                <div>
+                    <p>
+                        <%= posts.description %>
+                    </p>
                 </div>
-                <div class="container">
-                    <div>
-                        <h1>
-                            <%= posts.title %>
-                        </h1>
-                        <h4>
-                            <%= posts.category %>
-                        </h4>
-                        <p>
-                            <%= posts.description %>
-                        </p>
-                    </div>
-                    <div>
-                        <h6>
-                            Created on <%= posts.dateCreated%>
-                        </h6>
-                    </div>
+                <div>
+                    <h6>
+                        Created on <%= posts.dateCreated%>
+                    </h6>
                 </div>
             </div>
-
-        </section>
+        </div>
 
         <%- include("footer") -%>
 
