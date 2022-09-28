@@ -54,8 +54,13 @@ app.post('/compose', async (req, res) => {
 
 });
 
-app.get('/postID', async (req, res) => {
-    res.render('post');
+app.get('/posts/postid=:postID&postTitle=:postTitle', async (req, res) => {
+
+    let id = req.params.postID;
+    let title = req.params.postTitle;
+
+    res.render('post', {id: id, title: title});
+
 });
 
 app.listen(port, function () {

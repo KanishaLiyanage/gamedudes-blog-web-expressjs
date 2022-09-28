@@ -44,9 +44,6 @@
                             <a href="/signIn">Sign In</a>
                         </li>
                         <li>
-                            <a href="signUp">Sign Up</a>
-                        </li>
-                        <li>
                             <a href="/profile">Profile</a>
                         </li>
                         <li>
@@ -86,7 +83,7 @@
             <!-- Blog Entries Column -->
             <div class="col-md-8">
 
-                <h1 class="my-4">Welcome</h1>
+                <h1 class="my-4">Welcome!</h1>
 
                 <% postsList.forEach(function(post){ %>
 
@@ -100,12 +97,16 @@
                             <p class="card-text">
                                 <%= post.description.substring(0, 500) + " ..." %>
                             </p>
-                            <a href="#" class="btn btn-primary">Read More &rarr;</a>
+                            <a href="/posts/postID=<%= post._id%>&postTitle=<%= post.title %>" class="btn btn-primary">Read More &rarr;</a>
                         </div>
-                        <div class="card-footer text-muted">
-                            Posted on <%= post.dateCreated %> by
-                                <a href="#">Name</a>
+                        <div class="cat-row">
+                            <div class="card-footer text-muted">
+                                Posted on <%= post.dateCreated %> by
+                                    <a href="#">Name</a>
+                            </div>
+                            <div class="cat-title">Category: <%= post.category %></div>
                         </div>
+
                     </div>
 
                     <% }); %>
