@@ -1,12 +1,38 @@
 <!DOCTYPE html>
+
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Create your Post</title>
+    <title>Compose</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/compose.css">
 </head>
+
 <body>
-    
+    <h1 class="pageTitle">Compose</h1>
+    <form class="" action="/compose" method="POST">
+        <div class="form-group">
+            <br>
+            <label for="compose">Title</label>
+            <input class="form-control" type="text" name="title" placeholder="Title" required>
+            <br>
+            <label for="compose">Category</label>
+            <select id="category" required>
+                <option value="upcomingGame">Upcoming Game</option>
+                <option value="latestGame">Latest Game</option>
+                <option value="review">Review</option>
+            </select>
+            <br>
+            <br>
+            <label for="description">Description</label>
+            <textarea class="form-control" name="description" cols="40" rows="5" required> </textarea>
+        </div>
+        <br>
+        <button class="btn btn-primary" type="submit" name="submit">Publish</button>
+    </form>
 </body>
+
 </html>

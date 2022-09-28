@@ -28,6 +28,10 @@ app.get('/compose', async (req, res) => {
     res.render('compose');
 });
 
+app.post('/compose', async (req, res) => {
+    res.redirect('/');
+});
+
 app.get('/postID', async (req, res) => {
     res.render('post');
 });
