@@ -13,7 +13,11 @@ app.use(express.static('public'));
 const port = process.env.PORT || 3000;
 
 app.get('/', async (req, res) => {
-    res.render('home');
+
+    let posts = await Post.find();
+
+    res.render('home', {postsList: posts});
+
 });
 
 app.get('/signUp', async (req, res) => {
@@ -37,6 +41,7 @@ app.post('/compose', async (req, res) => {
     const post = new Post({
 
         title: req.body.title,
+        imageURL: req.body.url,
         category: req.body.category,
         description: req.body.description,
         dateCreated: date.getDate()

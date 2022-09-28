@@ -27,7 +27,8 @@
 
                 <div class="site-info-row">
                     <div class="logo-img">
-                        <img src="https://png.pngtree.com/png-clipart/20200727/original/pngtree-gamer-logo-design-concept-vector-png-image_5355225.jpg" alt="logo" width=60" height="60"/>
+                        <img src="https://png.pngtree.com/png-clipart/20200727/original/pngtree-gamer-logo-design-concept-vector-png-image_5355225.jpg"
+                            alt="logo" width=60" height="60" />
                     </div>
                     <div class="site-name">
                         <p>GameDudes</p>
@@ -56,7 +57,7 @@
             </div>
         </div>
     </section>
-    
+
     <section class="baner-area">
         <div class="baner-container">
             <div class="background-img">
@@ -64,8 +65,9 @@
                     <div class="baner-content">
                         <h1>Dude You’re In The Right Place</h1>
                         <p>
-                            The most popular blog for gamers to post experiences in games and
-                             see latest news about games.
+                            The most popular blog website for gamers
+                            to post experiences in games and see the latest
+                            news about games.
                         </p>
                         <div class="baner-button">
                             <a href="/compose">Tell Your Experience</a>
@@ -86,63 +88,37 @@
 
                 <h1 class="my-4">Welcome</h1>
 
-                <!-- Blog Posts -->
-                <div class="card mb-4">
-                    <img class="card-img-top" src="####" alt="Card image">
-                    <div class="card-body">
-                        <h2 class="card-title">My Post</h2>
-                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis
-                            aliquid atque, nulla? Quos cum ex quis soluta, a laboriosam. Dicta expedita corporis animi
-                            vero voluptate voluptatibus possimus, veniam magni quis!</p>
-                        <a href="#" class="btn btn-primary">Read More &rarr;</a>
-                    </div>
-                    <div class="card-footer text-muted">
-                        Posted on May 2020 by
-                        <a href="#">Name</a>
-                    </div>
-                </div>
+                <% postsList.forEach(function(post){ %>
 
-                <!-- Blog Post -->
-                <div class="card mb-4">
-                    <img class="card-img-top" src="####" alt="Card image">
-                    <div class="card-body">
-                        <h2 class="card-title">My Post</h2>
-                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis
-                            aliquid atque, nulla? Quos cum ex quis soluta, a laboriosam. Dicta expedita corporis animi
-                            vero voluptate voluptatibus possimus, veniam magni quis!</p>
-                        <a href="#" class="btn btn-primary">Read More &rarr;</a>
+                    <!-- Blog Posts -->
+                    <div class="card mb-4">
+                        <img class="card-img-top" src="<%= post.imageURL %>" alt="Card image">
+                        <div class="card-body">
+                            <h2 class="card-title">
+                                <%= post.title %>
+                            </h2>
+                            <p class="card-text">
+                                <%= post.description.substring(0, 500) + " ..." %>
+                            </p>
+                            <a href="#" class="btn btn-primary">Read More &rarr;</a>
+                        </div>
+                        <div class="card-footer text-muted">
+                            Posted on <%= post.dateCreated %> by
+                                <a href="#">Name</a>
+                        </div>
                     </div>
-                    <div class="card-footer text-muted">
-                        Posted on February, 2020 by
-                        <a href="#">Name</a>
-                    </div>
-                </div>
 
-                <!-- Blog Post -->
-                <div class="card mb-4">
-                    <img class="card-img-top" src="###" alt="Card image">
-                    <div class="card-body">
-                        <h2 class="card-title">My Post</h2>
-                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis
-                            aliquid atque, nulla? Quos cum ex quis soluta, a laboriosam. Dicta expedita corporis animi
-                            vero voluptate voluptatibus possimus, veniam magni quis!</p>
-                        <a href="#" class="btn btn-primary">Read More &rarr;</a>
-                    </div>
-                    <div class="card-footer text-muted">
-                        Posted on January 1, 2020 by
-                        <a href="#">Name</a>
-                    </div>
-                </div>
+                    <% }); %>
 
-                <!-- Pagination -->
-                <ul class="pagination justify-content-center mb-4">
-                    <li class="page-item">
-                        <a class="page-link" href="#">&larr; Older</a>
-                    </li>
-                    <li class="page-item disabled">
-                        <a class="page-link" href="#">New posts &rarr;</a>
-                    </li>
-                </ul>
+                        <!-- Pagination -->
+                        <ul class="pagination justify-content-center mb-4">
+                            <li class="page-item">
+                                <a class="page-link" href="#">&larr; Older</a>
+                            </li>
+                            <li class="page-item disabled">
+                                <a class="page-link" href="#">New posts &rarr;</a>
+                            </li>
+                        </ul>
 
             </div>
 
