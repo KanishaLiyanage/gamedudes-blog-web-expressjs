@@ -1,6 +1,10 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 
+const Post = require('../src/models/post');
+require('../src/db/connection');
+const date = require('../src/utils/date');
+
 const app = express();
 app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -29,8 +33,20 @@ app.get('/compose', async (req, res) => {
 });
 
 app.post('/compose', async (req, res) => {
-    
+
+    const post = new Post({
+
+        title: req.body.title,
+        category: req.body.category,
+        description: req.body.description,
+        dateCreated: date.getDate()
+
+    });
+
+    await post.save();
+
     res.redirect('/');
+
 });
 
 app.get('/postID', async (req, res) => {
