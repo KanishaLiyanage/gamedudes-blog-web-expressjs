@@ -16,9 +16,24 @@ router.get('/signIn', async (req, res) => {
 
 router.post('/login', async (req, res) => {
 
+    const user = new User({
 
+        username: req.body.username,
+        password: req.body.password
 
-    res.redirect('/');
+    });
+
+    req.login(user, function (err) {
+
+        if (err) {
+            console.log(err);
+        } else {
+            passport.authenticate("local")(req, res, function () {
+                res.redirect('/');
+            });
+        }
+
+    });
 
 });
 
@@ -45,7 +60,15 @@ router.post('/register', async (req, res) => {
 
 router.get('/profile', async (req, res) => {
 
-    res.render('profile');
+    if (req.isAuthenticated()) {
+
+        res.render('profile');
+
+    } else {
+
+        res.redirect('/signIn');
+
+    }
 
 });
 

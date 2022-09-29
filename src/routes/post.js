@@ -21,7 +21,7 @@ router.get('/compose', async (req, res) => {
 
     } else {
 
-        res.redirect('/signUp');
+        res.redirect('/signIn');
 
     }
 
