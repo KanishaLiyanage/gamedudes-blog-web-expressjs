@@ -14,7 +14,17 @@ router.get('/', async (req, res) => {
 });
 
 router.get('/compose', async (req, res) => {
-    res.render('compose');
+
+    if (req.isAuthenticated()) {
+
+        res.render('compose');
+
+    } else {
+
+        res.redirect('/signUp');
+
+    }
+
 });
 
 router.post('/compose', async (req, res) => {

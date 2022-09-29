@@ -146,6 +146,10 @@ body {
   font-weight: bold;
 }
 
+.baner-button a:hover{
+  text-decoration: none;
+}
+
 .card-img-top{
   height: 200px;
   object-fit: cover;
