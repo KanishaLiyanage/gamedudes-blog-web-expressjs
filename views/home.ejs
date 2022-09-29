@@ -68,7 +68,9 @@
                                 <div class="cat-row">
                                     <div class="card-footer text-muted">
                                         Posted on <%= post.dateCreated %> by
-                                            <a href="#">Name</a>
+                                            <a href="#">
+                                                <%= post.userName %>
+                                            </a>
                                     </div>
                                     <div class="cat-title">Category: <%= post.category %>
                                     </div>

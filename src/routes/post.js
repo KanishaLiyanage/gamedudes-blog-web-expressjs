@@ -46,6 +46,7 @@ router.post('/compose', async (req, res) => {
                         category: req.body.category,
                         description: req.body.description,
                         userID: foundUser._id,
+                        userName: foundUser.username,
                         dateCreated: date.getDate()
 
                     });

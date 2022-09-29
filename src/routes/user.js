@@ -14,7 +14,28 @@ router.get('/signUp', async (req, res) => {
 router.get('/signIn', async (req, res) => {
 
     res.render('signIn');
-    
+
+});
+
+router.post('/register', async (req, res) => {
+
+    User.register(
+
+        { username: req.body.username, accCreatedDate: date.getDate() },
+        req.body.password,
+        function (err, user) {
+            if (err) {
+                console.log(err);
+                res.redirect('/signUp');
+            } else {
+                passport.authenticate("local")(req, res, function () {
+                    res.redirect('/compose');
+                });
+            }
+        }
+
+    );
+
 });
 
 router.post('/login', async (req, res) => {
@@ -40,24 +61,15 @@ router.post('/login', async (req, res) => {
 
 });
 
-router.post('/register', async (req, res) => {
+router.get('/logout', async (req, res) => {
 
-    User.register(
-
-        { username: req.body.username, accCreatedDate: date.getDate() },
-        req.body.password,
-        function (err, user) {
-            if (err) {
-                console.log(err);
-                res.redirect('/signUp');
-            } else {
-                passport.authenticate("local")(req, res, function () {
-                    res.redirect('/compose');
-                });
-            }
+    req.logout(function (err) {
+        if (err) {
+            return next(err);
+        } else {
+            res.redirect('/');
         }
-
-    );
+    });
 
 });
 
