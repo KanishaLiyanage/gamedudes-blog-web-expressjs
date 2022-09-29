@@ -60,7 +60,7 @@ router.post('/register', async (req, res) => {
 
 router.get('/profile', async (req, res) => {
 
-    if (req.isAuthenticated()) {
+    if (await req.isAuthenticated()) {
 
         res.render('profile');
 

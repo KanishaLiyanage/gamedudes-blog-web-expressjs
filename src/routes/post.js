@@ -15,7 +15,7 @@ router.get('/', async (req, res) => {
 
 router.get('/compose', async (req, res) => {
 
-    if (req.isAuthenticated()) {
+    if (await req.isAuthenticated()) {
 
         res.render('compose');
 
