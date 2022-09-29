@@ -4,7 +4,6 @@ const bodyParser = require('body-parser');
 require('../src/db/connection');
 const userRouter = require('../src/routes/user');
 const postRouter = require('../src/routes/post');
-const date = require('../src/utils/date');
 
 const app = express();
 app.set('view engine', 'ejs');
