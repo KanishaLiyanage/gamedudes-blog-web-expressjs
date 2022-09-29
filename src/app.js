@@ -1,3 +1,4 @@
+require('dotenv').config();
 const express = require('express');
 const bodyParser = require('body-parser');
 const session = require('express-session');
@@ -15,7 +16,7 @@ app.use(express.static('public'));
 const secretKey = process.env.KEY;
 
 app.use(session({
-    secret: "gamedude27017",
+    secret: secretKey,
     resave: false,
     saveUninitialized: false
 }));
