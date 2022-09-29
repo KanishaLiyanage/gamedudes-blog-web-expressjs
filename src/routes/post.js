@@ -1,6 +1,7 @@
 const express = require('express');
 
 const Post = require('../models/post');
+const User = require('../models/user');
 const date = require('../utils/date');
 
 const router = express.Router();
@@ -29,19 +30,39 @@ router.get('/compose', async (req, res) => {
 
 router.post('/compose', async (req, res) => {
 
-    const post = new Post({
+    if (await req.isAuthenticated()) {
 
-        title: req.body.title,
-        imageURL: req.body.url,
-        category: req.body.category,
-        description: req.body.description,
-        dateCreated: date.getDate()
+        User.findById(req.user.id, async (err, foundUser) => {
 
-    });
+            if (err) {
+                console.log(err);
+            } else {
+                if (foundUser) {
 
-    await post.save();
+                    const post = new Post({
 
-    res.redirect('/');
+                        title: req.body.title,
+                        imageURL: req.body.url,
+                        category: req.body.category,
+                        description: req.body.description,
+                        userID: foundUser._id,
+                        dateCreated: date.getDate()
+
+                    });
+
+                    await post.save();
+                    res.redirect('/');
+
+                }
+            }
+
+        });
+
+    } else {
+
+        res.redirect('/signIn');
+
+    }
 
 });
 

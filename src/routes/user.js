@@ -1,17 +1,20 @@
 const express = require('express');
 const passport = require('passport');
 const User = require('../models/user');
-
 const date = require('../utils/date');
 
 const router = new express.Router();
 
 router.get('/signUp', async (req, res) => {
+
     res.render('signUp');
+
 });
 
 router.get('/signIn', async (req, res) => {
+
     res.render('signIn');
+    
 });
 
 router.post('/login', async (req, res) => {

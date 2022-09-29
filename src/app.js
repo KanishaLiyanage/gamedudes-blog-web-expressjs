@@ -12,6 +12,8 @@ app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static('public'));
 
+const secretKey = process.env.KEY;
+
 app.use(session({
     secret: "gamedude27017",
     resave: false,
@@ -32,7 +34,9 @@ app.use(userRouter);
 app.use(postRouter);
 
 app.get('/about', async (req, res) => {
+
     res.render('about');
+
 });
 
 app.listen(port, function () {
