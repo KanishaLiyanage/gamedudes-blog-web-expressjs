@@ -8,16 +8,67 @@
     <title>My Profile</title>
     <%- include("header") -%>
         <base href="/">
-        <link rel="stylesheet" href="css/about.css">
+        <link rel="stylesheet" href="css/profile.css">
         <link rel="stylesheet" href="css/home.css">
 </head>
 
 <body>
 
-    
+    <div class="card">
+        <div class="card__header">
+            <div class="card__profile">
+                <img src="https://randomuser.me/api/portraits/men/52.jpg" alt="A man smiling" />
+            </div>
+            <div class="card__name">
+                <h2>Leo Bailey</h2>
+                <div class="card__handle">
+                    <span class="handle">@leo_bai</span>
+                </div>
+            </div>
+            <div class="card__button">
+                <button>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        class="feather feather-edit">
+                        <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path>
+                        <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path>
+                    </svg>
+                    <span>Edit</span>
+                </button>
+            </div>
+        </div>
+        <hr class="border" />
+        <div class="card__insights">
+            <div class="card__heading">
+                <div class="heading">My Blogs</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="payment">
+
+        <div class="row">
+            <div class="col-1 icons">
+                <img src="https://stripe.com/img/v3/pricing/payments/section-ach.svg" width="70" height="70"
+                    alt="ACH logo">
+                <img src="https://stripe.com/img/v3/pricing/payments/section-bitcoin.svg" width="70" height="70"
+                    alt="Bitcoin logo">
+            </div>
+            <div class="col-2 info">
+                <h2>ACH and Bitcoin payments</h2>
+                <div class="description">
+                    <p>ACH and Bitcoin fees are capped at $5—payments above $625 cost $5. We also provide tools to <a
+                            href="#">verify customers’ bank accounts</a> at no additional cost. We charge $4 for failed
+                        ACH payments.</p>
+                </div>
+            </div>
+            <div class="col-1 price">
+                <p>0.8% · $5 cap</p>
+            </div>
+        </div>
+
+    </div>
 
 </body>
-
-<%- include("footer") -%>
 
 </html>

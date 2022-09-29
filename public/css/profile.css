@@ -1,0 +1,150 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap");
+
+:root {
+    --primary: #323232;
+    --light-bg: #f4f4f4;
+    --border: #eee;
+}
+
+.card {
+    margin-top: 8em;
+    padding-left: 5em;
+    padding-top: 2em;
+    padding-right: 5em;
+    padding-bottom: 2em;
+}
+
+.card__header {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    margin-top: -15px;
+}
+
+.card__profile img {
+    border-radius: 50%;
+    height: 5rem;
+    width: 5rem;
+    -o-object-fit: cover;
+    object-fit: cover;
+}
+
+.card__name {
+    margin-left: 1.25rem;
+}
+
+.card__button svg {
+    height: 1.05rem;
+    width: 1.05rem;
+    margin-right: 5px;
+}
+
+.card__button {
+    margin-left: auto;
+}
+
+.card__button button {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    font-size: 1.05rem;
+    background-color: var(--primary);
+    color: white;
+    font-weight: bold;
+    border: none;
+    height: 40px;
+    width: 100px;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.card__button button:active {
+    -webkit-transform: scale(0.96);
+    transform: scale(0.96);
+}
+
+.card__heading {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+.border {
+    border-radius: 5px;
+    height: 2px;
+    background-color: var(--border);
+    border: none;
+    margin: 1.25rem 0;
+}
+
+.heading {
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+
+.row {
+    padding-left: 5em;
+    padding-right: 5em;
+    padding-bottom: 2em;
+}
+
+.payment {
+    margin-top: 60px;
+}
+
+.icons {
+    text-align: right;
+    margin-right: 40px;
+}
+
+.icons img {
+    margin-left: 5px;
+    margin-top: 20px;
+}
+
+.info h2 {
+    color: #0d2b3e;
+    font-size: 19px;
+    margin-bottom: 10px;
+}
+
+.info .description p {
+    color: #566b78;
+    line-height: 22px;
+}
+
+.info .description p a {
+    color: #008cdd;
+    text-decoration: none;
+}
+
+.info .description p a:hover {
+    color: #003f5e;
+}
+
+.price {
+    vertical-align: bottom;
+    margin-bottom: 25px;
+}
+
+.price p {
+    margin-left: 35px;
+    font-size: 24px;
+    font-weight: 300;
+    color: #00ab1c;
+}
