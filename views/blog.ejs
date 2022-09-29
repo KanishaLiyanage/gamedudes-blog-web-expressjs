@@ -6,45 +6,37 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <%- include("header") -%>
     <title>
         <%= blog.title %>
     </title>
-
-
+    <%- include("header") -%>
+        <base href="/">
+        <link rel="stylesheet" href="css/blog.css">
 </head>
 
 <body>
 
-    
-
+    <section id="home" class="section-showcase">
         <div class="container">
-            <div class="image">
-                <p>
+            <div>
                 <h1>
                     <%= blog.title %>
                 </h1>
-                <h4>
+                <p class="cat">
                     <%= blog.category %>
-                </h4>
                 </p>
-                <img src="<%= blog.imageURL %>" alt="" />
-            </div>
-            <div class="info">
-                <div>
-                    <p>
-                        <%= blog.description %>
-                    </p>
+                <div class="date">
+                    <%= blog.dateCreated %> By <a class="name" href="#"><%= blog.userName %></a>
                 </div>
-                <div>
-                    <h6>
-                        Created on <%= blog.dateCreated%>
-                    </h6>
-                </div>
+                <p>
+                    <%= blog.description %>
+                </p>
             </div>
+            <img class="blogImg" src="<%= blog.imageURL %>" alt="" />
         </div>
+    </section>
 
-        <%- include("footer") -%>
+    <%- include("footer") -%>
 
 </body>
 
