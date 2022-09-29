@@ -9,20 +9,21 @@
     <%- include("header") -%>
         <base href="/">
         <link rel="stylesheet" href="css/profile.css">
-        <link rel="stylesheet" href="css/home.css">
 </head>
 
 <body>
 
-    <div class="card">
+    <div class="profile-card">
         <div class="card__header">
             <div class="card__profile">
                 <img src="https://randomuser.me/api/portraits/men/52.jpg" alt="A man smiling" />
             </div>
             <div class="card__name">
-                <h2>Leo Bailey</h2>
+                <h2>
+                    <%= userName %>
+                </h2>
                 <div class="card__handle">
-                    <span class="handle">@leo_bai</span>
+                    <span class="handle">@<%= userName %></span>
                 </div>
             </div>
             <div class="card__button">
@@ -45,29 +46,30 @@
         </div>
     </div>
 
-    <div class="payment">
+    <% blogs.forEach(function(blog){ %>
 
-        <div class="row">
-            <div class="col-1 icons">
-                <img src="https://stripe.com/img/v3/pricing/payments/section-ach.svg" width="70" height="70"
-                    alt="ACH logo">
-                <img src="https://stripe.com/img/v3/pricing/payments/section-bitcoin.svg" width="70" height="70"
-                    alt="Bitcoin logo">
+        <div class="card mb-4">
+            <img class="card-img-top" src="<%= blog.imageURL %>" alt="Card image">
+            <div class="card-body">
+                <h2 class="card-title">
+                    <%= blog.title %>
+                </h2>
+                <p class="card-text">
+                    <%= blog.description.substring(0, 100) + " ..." %>
+                </p>
+                <a href="/posts/delete-post/postID=<%=blog._id%>" class="btn btn-primary">Delete Blog</a>
             </div>
-            <div class="col-2 info">
-                <h2>ACH and Bitcoin payments</h2>
-                <div class="description">
-                    <p>ACH and Bitcoin fees are capped at $5—payments above $625 cost $5. We also provide tools to <a
-                            href="#">verify customers’ bank accounts</a> at no additional cost. We charge $4 for failed
-                        ACH payments.</p>
+            <div class="cat-row">
+                <div class="card-footer text-muted">
+                    Posted on <%= blog.dateCreated %>
+                </div>
+                <div class="cat-title">Category: <%= blog.category %>
                 </div>
             </div>
-            <div class="col-1 price">
-                <p>0.8% · $5 cap</p>
-            </div>
+
         </div>
 
-    </div>
+        <% }); %>
 
 </body>
 

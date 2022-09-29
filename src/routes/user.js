@@ -1,6 +1,7 @@
 const express = require('express');
 const passport = require('passport');
 const User = require('../models/user');
+const Post = require('../models/post');
 const date = require('../utils/date');
 
 const router = new express.Router();
@@ -77,7 +78,28 @@ router.get('/profile', async (req, res) => {
 
     if (await req.isAuthenticated()) {
 
-        res.render('profile');
+        User.findById(req.user.id, async (err, foundUser) => {
+
+            if (err) {
+                console.log(err);
+            } else {
+                if (foundUser) {
+
+                    Post.find({ userID: foundUser._id }, async (err, foundBlogs) => {
+                        if (err) {
+                            console.log(err);
+                        } else {
+                            if (foundBlogs) {
+                                let blogs = await foundBlogs;
+                                res.render('profile', { userName: foundUser.username, blogs: blogs });
+                            }
+                        }
+                    });
+
+                }
+            }
+
+        });
 
     } else {
 

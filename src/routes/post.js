@@ -88,4 +88,31 @@ router.get('/posts/postID=:postID',
 
     });
 
+router.get('/posts/delete-post/postID=:postID',
+
+    async (req, res) => {
+
+        let id = await req.params.postID;
+
+        if (await req.isAuthenticated()) {
+
+            Post.deleteOne(
+                { _id: id },
+                function (err) {
+                    if (err) {
+                        console.log(err);
+                    } else {
+                        res.redirect('/profile');
+                    }
+                }
+            );
+
+        } else {
+
+            res.redirect('/signIn');
+
+        }
+
+    });
+
 module.exports = router;

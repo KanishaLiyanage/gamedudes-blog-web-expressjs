@@ -6,7 +6,7 @@
     --border: #eee;
 }
 
-.card {
+.profile-card {
     margin-top: 8em;
     padding-left: 5em;
     padding-top: 2em;
@@ -96,55 +96,42 @@
     font-size: 1.1rem;
 }
 
-
-.row {
-    padding-left: 5em;
-    padding-right: 5em;
-    padding-bottom: 2em;
+.mb-4{
+    width: 50em;
+    margin-left: 5em;
+    margin-bottom: 2em;
 }
 
-.payment {
-    margin-top: 60px;
+.card-img-top {
+    height: 200px;
+    object-fit: cover;
 }
 
-.icons {
-    text-align: right;
-    margin-right: 40px;
+.cat-row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    color: #030a4d;
+    padding-right: 20px;
 }
 
-.icons img {
-    margin-left: 5px;
-    margin-top: 20px;
+.btn-primary{
+    background-color: red;
+    border: none;
 }
 
-.info h2 {
-    color: #0d2b3e;
-    font-size: 19px;
-    margin-bottom: 10px;
+.btn-primary:hover{
+    background-color: rgb(190, 4, 4);
+    border: none;
 }
 
-.info .description p {
-    color: #566b78;
-    line-height: 22px;
+.card-title{
+    font-size: 1.5em;
+    font-weight: bold;
 }
 
-.info .description p a {
-    color: #008cdd;
-    text-decoration: none;
-}
-
-.info .description p a:hover {
-    color: #003f5e;
-}
-
-.price {
-    vertical-align: bottom;
-    margin-bottom: 25px;
-}
-
-.price p {
-    margin-left: 35px;
-    font-size: 24px;
-    font-weight: 300;
-    color: #00ab1c;
+.card-text{
+    font-size: 1em;
+    font-weight: 200;
 }
