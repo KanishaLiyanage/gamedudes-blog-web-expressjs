@@ -148,6 +148,7 @@ body {
 
 .baner-button a:hover{
   text-decoration: none;
+  color: rgb(255, 57, 133);
 }
 
 .card-img-top{

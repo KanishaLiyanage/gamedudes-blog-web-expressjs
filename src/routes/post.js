@@ -71,16 +71,16 @@ router.get('/posts/postID=:postID',
 
     async (req, res) => {
 
-        let id = req.params.postID;
+        let id = await req.params.postID;
 
-        Post.findById(id, async (err, foundPost) => {
+        Post.findById(id, async (err, foundBlog) => {
             if (err) {
                 console.log(err);
             } else {
-                if (foundPost) {
-                    let posts = foundPost;
+                if (foundBlog) {
+                    let blogs = await foundBlog;
                     res.render('blog',
-                        { posts: posts }
+                        { blog: blogs }
                     );
                 }
             }
