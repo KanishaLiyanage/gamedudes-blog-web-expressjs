@@ -126,16 +126,6 @@
     border: none;
 }
 
-.delete-btn-primary{
-    color: red;
-    border: none;
-}
-
-.delete-btn-primary:hover{
-    color: rgb(190, 4, 4);
-    border: none;
-}
-
 .card-title{
     font-size: 1.5em;
     font-weight: bold;
@@ -154,6 +144,18 @@
 
 .edit-btn:hover{
     background-color: rgb(27, 27, 235);
+}
+
+.delete-btn-primary{
+    color: white;
+    background-color: red;
+    border: none;
+}
+
+.delete-btn-primary:hover{
+    color: white;
+    background-color: rgb(190, 4, 4);
+    border: none;
 }
 
 .card-title{
