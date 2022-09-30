@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Search Result</title>
+    <base href="/">
+    <link rel="stylesheet" href="css/search.css">
+
+</head>
+
+<body>
+
+    <%- include("header") -%>
+
+        <!-- Page Content -->
+        <section id="browse">
+
+            <div class="container">
+
+                <div class="row">
+
+                    <!-- Blog Entries Column -->
+                    <div class="col-md-8">
+
+                        <h1 class="my-4">
+                            <%= postCount %> Blog Posts Found!
+                        </h1>
+
+                        <% postsList.forEach(function(post){ %>
+
+                            <!-- Blog Posts -->
+                            <div class="card mb-4">
+                                <img class="card-img-top" src="<%= post.imageURL %>" alt="Card image">
+                                <div class="card-body">
+                                    <h2 class="card-title">
+                                        <%= post.title %>
+                                    </h2>
+                                    <p class="card-text">
+                                        <%= post.description.substring(0, 500) + " ..." %>
+                                    </p>
+                                    <a href="/posts/postID=<%=post._id%>" class="btn btn-primary">Read More &rarr; </a>
+                                </div>
+                                <div class="cat-row">
+                                    <div class="card-footer text-muted">
+                                        Posted on <%= post.dateCreated %> by
+                                            <a href="/user/userID=<%= post.userID %>">
+                                                <%= post.userName %>
+                                            </a>
+                                    </div>
+                                    <div class="cat-title">Category: <%= post.category %>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <% }); %>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <%- include("footer") -%>
+
+</body>
+
+</html>

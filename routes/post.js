@@ -204,4 +204,23 @@ router.get('/posts/delete-post/postID=:postID',
 
     });
 
+router.post('/posts/search', async (req, res) => {
+
+    category = req.body.catName;
+    
+    Post.find(
+        { category: category }, function (err, foundBlogs) {
+            if (err) {
+            } else {
+                if (foundBlogs) {
+                    let blogs = foundBlogs;
+                    let length = blogs.length;
+                    res.render('search', { postsList: blogs, postCount: length });
+                }
+            }
+        }
+    );
+
+});
+
 module.exports = router;

@@ -6,7 +6,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Compose</title>
+    <title>
+        Edit <%=blogTitle%>
+    </title>
     <%- include("header") -%>
         <base href="/">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -27,7 +29,9 @@
             <br>
             <label for="compose">Category</label>
             <select id="category" name="category">
-                <option value="<%=blogCat%>"><%=blogCat%></option>
+                <option value="<%=blogCat%>">
+                    <%=blogCat%>
+                </option>
                 <option value="Upcoming Game">Upcoming Game</option>
                 <option value="Latest Game">Latest Game</option>
                 <option value="Gamer Experience">Gamer Experience</option>
