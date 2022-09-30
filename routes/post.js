@@ -67,6 +67,36 @@ router.post('/compose', async (req, res) => {
 
 });
 
+router.get('/user/userID=:userID',
+
+    async (req, res) => {
+
+        let id = await req.params.userID;
+
+        User.findById(id, async (err, foundUser) => {
+            if (err) {
+                console.log(err);
+            } else {
+                if (foundUser) {
+                    let user = await foundUser;
+                    Post.find({ userID: id }, async (err, foundBlogs) => {
+                        if (err) {
+                            console.log(err);
+                        } else {
+                            if (foundBlogs) {
+                                let blogs = await foundBlogs;
+                                res.render('user',
+                                    { userName: user.username, blogs: blogs }
+                                );
+                            }
+                        }
+                    });
+                }
+            }
+        });
+
+    });
+
 router.get('/posts/postID=:postID',
 
     async (req, res) => {

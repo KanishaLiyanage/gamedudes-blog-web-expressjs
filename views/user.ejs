@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Profile</title>
+    <%- include("header") -%>
+        <base href="/">
+        <link rel="stylesheet" href="css/profile.css">
+</head>
+
+<body>
+
+    <div class="profile-card">
+        <div class="card__header">
+            <div class="card__profile">
+                <img src="https://randomuser.me/api/portraits/men/52.jpg" alt="A man smiling" />
+            </div>
+            <div class="card__name">
+                <h2>
+                    <%= userName %>
+                </h2>
+                <div class="card__handle">
+                    <span class="handle">@<%= userName %></span>
+                </div>
+            </div>
+        </div>
+        <hr class="border" />
+        <div class="card__insights">
+            <div class="card__heading">
+                <div class="heading">
+                    <%= userName %>'s Blogs
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <% blogs.forEach(function(blog){ %>
+
+        <a class="link" href="/posts/postID=<%=blog._id%>">
+            <div class="card mb-4">
+                <img class="card-img-top" src="<%= blog.imageURL %>" alt="Card image">
+                <div class="card-body">
+                    <h2 class="card-title">
+                        <%= blog.title %>
+                    </h2>
+                    <p class="card-text">
+                        <%= blog.description.substring(0, 100) + " ..." %>
+                    </p>
+                    <div class="buttons">
+                        <div class="cat-title">
+                            Category: <%= blog.category %>
+                        </div>
+                    </div>
+                </div>
+                <div class="cat-row bottom-row">
+                    <div class="card-footer text-muted">
+                        Posted on <%= blog.dateCreated %>
+                    </div>
+                </div>
+            </div>
+        </a>
+
+        <% }); %>
+
+            <%- include("footer") -%>
+
+</body>
+
+</html>
