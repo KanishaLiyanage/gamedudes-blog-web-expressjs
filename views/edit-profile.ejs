@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compose</title>
+    <%- include("header") -%>
+        <base href="/">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/compose.css">
+</head>
+
+<body>
+
+    <form class="form-body" action="/user/edit-profile/userID=<%= userID %>" method="POST">
+        <h1 class="pageTitle">Update your profile</h1>
+        <div class="form-group">
+            <br>
+            <label for="username">Change Username</label>
+            <input class="form-control" type="text" name="username" value="" placeholder="Username">
+            <br>
+            <label for="email">Change email</label>
+            <input class="form-control" type="text" name="email" value="" placeholder="Email">
+            <br>
+            <label for="profilePic">Update Profile Picture</label>
+            <input class="form-control" type="text" name="profilePic" value="" placeholder="Profile Picture">
+            <br>
+        </div>
+        <br>
+        <button class="btn btn-primary" type="submit" name="submit">Update</button>
+    </form>
+    
+    <br>
+
+    <%- include("footer") -%>
+
+</body>
+
+</html>

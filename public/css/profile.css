@@ -117,12 +117,22 @@
 }
 
 .btn-primary{
-    background-color: red;
+    background-color: rgb(27, 27, 235);
     border: none;
 }
 
 .btn-primary:hover{
-    background-color: rgb(190, 4, 4);
+    background-color: rgb(15, 15, 126);
+    border: none;
+}
+
+.delete-btn-primary{
+    color: red;
+    border: none;
+}
+
+.delete-btn-primary:hover{
+    color: rgb(190, 4, 4);
     border: none;
 }
 
@@ -134,4 +144,15 @@
 .card-text{
     font-size: 1em;
     font-weight: 200;
+}
+
+.buttons{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.edit-btn:hover{
+    background-color: rgb(27, 27, 235);
 }

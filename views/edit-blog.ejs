@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compose</title>
+    <%- include("header") -%>
+        <base href="/">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/compose.css">
+</head>
+
+<body>
+
+    <form class="form-body" action="/posts/edit-post/blogId=<%= blogId %>" method="POST">
+        <h1 class="pageTitle">Edit Blog</h1>
+        <div class="form-group">
+            <br>
+            <label for="compose">Title</label>
+            <input class="form-control" type="text" name="title" value="<%=blogTitle%>" placeholder="Title">
+            <br>
+            <label for="image">Image Url</label>
+            <input class="form-control" type="text" value="<%=blogImg%>" name="url" placeholder="Image URL">
+            <br>
+            <label for="compose">Category</label>
+            <select id="category" name="category">
+                <option value="<%=blogCat%>"><%=blogCat%></option>
+                <option value="Upcoming Game">Upcoming Game</option>
+                <option value="Latest Game">Latest Game</option>
+                <option value="Gamer Experience">Gamer Experience</option>
+            </select>
+            <br>
+            <br>
+            <label for="description">Description</label>
+            <textarea class="form-control" name="description" cols="40" rows="5"> <%=blogDesc%> </textarea>
+        </div>
+        <br>
+        <button class="btn btn-primary" type="submit" name="submit">Update</button>
+    </form>
+
+    <%- include("footer") -%>
+
+</body>
+
+</html>

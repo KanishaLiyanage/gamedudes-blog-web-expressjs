@@ -24,6 +24,7 @@ router.post('/register', async (req, res) => {
 
         { username: req.body.username, accCreatedDate: date.getDate() },
         req.body.password,
+
         function (err, user) {
             if (err) {
                 console.log(err);
@@ -100,6 +101,58 @@ router.get('/profile', async (req, res) => {
             }
 
         });
+
+    } else {
+
+        res.redirect('/signIn');
+
+    }
+
+});
+
+router.get('/user/edit-profile', async (req, res) => {
+
+    id = req.user.id;
+
+    if (await req.isAuthenticated()) {
+
+
+        User.findById(id, async (err, foundUser) => {
+            if (err) {
+                console.log(err);
+            } else {
+                if (foundUser) {
+                    let user = await foundUser;
+                    res.render('edit-profile',
+                        {
+                            userID: id,
+                        }
+                    );
+                }
+            }
+        });
+
+    } else {
+
+        res.redirect('/signIn');
+
+    }
+
+});
+
+router.post('/user/edit-profile/userID:userID', async (req, res) => {
+
+    let id = userID;
+
+    if (await req.isAuthenticated()) {
+
+        await User.findByIdAndUpdate(
+            id,
+            req.body,
+            { new: true, runValdators: true }
+        );
+
+        res.redirect('/profile');
 
     } else {
 

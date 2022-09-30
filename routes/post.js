@@ -88,6 +88,65 @@ router.get('/posts/postID=:postID',
 
     });
 
+router.get('/posts/edit-post/postID=:postID',
+
+    async (req, res) => {
+
+        let id = await req.params.postID;
+
+        if (await req.isAuthenticated()) {
+
+            Post.findById(id, async (err, foundBlog) => {
+                if (err) {
+                    console.log(err);
+                } else {
+                    if (foundBlog) {
+                        let blog = await foundBlog;
+                        res.render('edit-blog',
+                            {
+                                blogId: blog._id,
+                                blogTitle: blog.title,
+                                blogImg: blog.imageURL,
+                                blogCat: blog.category,
+                                blogDesc: blog.description
+                            }
+                        );
+                    }
+                }
+            });
+
+        } else {
+
+            res.redirect('/signIn');
+
+        }
+
+    });
+
+router.post('/posts/edit-post/blogId=:blogId',
+
+    async (req, res) => {
+
+        let id = await req.params.blogId;
+
+        if (await req.isAuthenticated()) {
+
+            await Post.findByIdAndUpdate(
+                id,
+                req.body,
+                { new: true, runValdators: true }
+            );
+
+            res.redirect('/profile');
+
+        } else {
+
+            res.redirect('/signIn');
+
+        }
+
+    });
+
 router.get('/posts/delete-post/postID=:postID',
 
     async (req, res) => {
