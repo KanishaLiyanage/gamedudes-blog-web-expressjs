@@ -3,8 +3,8 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const session = require('express-session');
 const passport = require('passport');
-const userRouter = require('../src/routes/user');
-const postRouter = require('../src/routes/post');
+const userRouter = require('./routes/user');
+const postRouter = require('./routes/post');
 
 const port = process.env.PORT || 3000;
 
@@ -24,8 +24,8 @@ app.use(session({
 app.use(passport.initialize());
 app.use(passport.session());
 
-require('../src/db/connection');
-const User = require('../src/models/user');
+require('./db/connection');
+const User = require('./models/user');
 
 passport.use(User.createStrategy());
 passport.serializeUser(User.serializeUser());
