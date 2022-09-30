@@ -50,29 +50,33 @@
 
     <% blogs.forEach(function(blog){ %>
 
-        <div class="card mb-4">
-            <img class="card-img-top" src="<%= blog.imageURL %>" alt="Card image">
-            <div class="card-body">
-                <h2 class="card-title">
-                    <%= blog.title %>
-                </h2>
-                <p class="card-text">
-                    <%= blog.description.substring(0, 100) + " ..." %>
-                </p>
-                <div class="buttons">
-                    <a href="/posts/edit-post/postID=<%=blog._id%>" class="btn btn-primary">&#9997 Edit</a>
-                    <a href="/posts/delete-post/postID=<%=blog._id%>" class="btn delete-btn-primary">Delete</a>
+        <a class="link" href="/posts/postID=<%=blog._id%>">
+            <div class="card mb-4">
+                <img class="card-img-top" src="<%= blog.imageURL %>" alt="Card image">
+                <div class="card-body">
+                    <h2 class="card-title">
+                        <%= blog.title %>
+                    </h2>
+                    <p class="card-text">
+                        <%= blog.description.substring(0, 100) + " ..." %>
+                    </p>
+                    <div class="buttons">
+                        <div class="cat-title">
+                            Category: <%= blog.category %>
+                        </div>
+                    </div>
+                </div>
+                <div class="cat-row bottom-row">
+                    <div class="card-footer text-muted">
+                        Posted on <%= blog.dateCreated %>
+                    </div>
+                    <div class="btn-row">
+                        <a href="/posts/edit-post/postID=<%=blog._id%>" class="btn btn-primary">&#9997 Edit</a>
+                        <a href="/posts/delete-post/postID=<%=blog._id%>" class="btn delete-btn-primary">Delete</a>
+                    </div>
                 </div>
             </div>
-            <div class="cat-row">
-                <div class="card-footer text-muted">
-                    Posted on <%= blog.dateCreated %>
-                </div>
-                <div class="cat-title">Category: <%= blog.category %>
-                </div>
-            </div>
-
-        </div>
+        </a>
 
         <% }); %>
 

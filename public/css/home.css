@@ -170,3 +170,15 @@ body {
   position: relative;
   bottom: 0;
 }
+
+.compose-btn-primary{
+  text-decoration: none;
+  background-color: #8490ff;
+  color:white;
+}
+
+.compose-btn-primary:hover{
+  text-decoration: none;
+  background-color: #030a4d;
+  color: white;
+}

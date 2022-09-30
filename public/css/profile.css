@@ -149,10 +149,42 @@
 .buttons{
     display: flex;
     flex-wrap: wrap;
-    align-items: center;
     justify-content: space-between;
 }
 
 .edit-btn:hover{
     background-color: rgb(27, 27, 235);
+}
+
+.card-title{
+    color: #030a4d;
+}
+
+.card-text{
+    color: #323232;
+}
+
+.cat-title{
+    color: #312158;
+}
+
+.link{
+    text-decoration: none;
+}
+
+.link:hover{
+    text-decoration: none;
+}
+
+.bottom-row{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.btn-row{
+    width: 200px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
 }
