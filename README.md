@@ -4,7 +4,7 @@
 <br />
 <div align="center">
   
-  <img src="images/logo.jpg" alt="Logo" width="80" height="80">
+<!--   <img src="images/logo.jpg" alt="Logo" width="80" height="80"> -->
 
 
   <h3 align="center">GameDudes Blog Website</h3>
