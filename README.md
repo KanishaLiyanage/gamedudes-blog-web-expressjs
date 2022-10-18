@@ -3,12 +3,9 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-  
 <!--   <img src="images/logo.jpg" alt="Logo" width="80" height="80"> -->
-
-
-  <h3 align="center">GameDudes Blog Website</h3>
-
+  <h1 align="center">GameDudes Blog Website</h1>
+  <br />
   <p align="center">
     This Blog Website is made for my university assignment. scroll down for more info.
     <br />
