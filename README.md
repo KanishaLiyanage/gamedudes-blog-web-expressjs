@@ -50,8 +50,7 @@
 [![Product Name Screen Shot][product-screenshot]](https://example.com)
 
 This Blog website is made for my university assignment.
-
-This Blog website is only for gamers who are like to post upcoming games, share experiences about played games, and post latest news all about gaming platform.
+This Blog website is only for gamers who are like to post upcoming games, share experiences about played games, and post the latest news all about gaming platforms.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
